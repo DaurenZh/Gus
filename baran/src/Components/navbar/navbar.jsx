@@ -2,8 +2,6 @@ import * as React from "react";
 import heart from './../../images/icons/arcticons--heart.svg'
 import cart from './../../images/icons/mdi-light--cart.svg'
 import './navbar.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import About from "../../pages/about";
 
 function Navbar() {
   return (
