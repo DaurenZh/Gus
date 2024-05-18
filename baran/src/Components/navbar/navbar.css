@@ -9,8 +9,8 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1168px;
-  padding: 17px 60px;
+  max-width: 1313px;
+  padding: 17px 45px;
   gap: 20px;
 }
 .logo-container {
@@ -23,6 +23,7 @@
   aspect-ratio: 1.1;
 }
 .site-name {
+  text-decoration: none;
   font-family: Inter, sans-serif;
   font-size: 30px;
   font-weight: 800;
@@ -88,6 +89,8 @@
   font-weight: 800;
 }
 .footer {
+  width: 100%;
+  max-width: 1313px;
   background-color: #ffb321;
   padding: 20px 60px;
 }
@@ -98,7 +101,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  max-width: 1168px;
+  max-width: 1300px;
   width: 100%;
 }
 .nav-links {
@@ -141,6 +144,7 @@
   .search-button,
   .site-name,
   .nav-link {
+    text-decoration: none;
     white-space: initial;
     padding: 0 20px;
   }

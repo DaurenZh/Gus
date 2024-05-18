@@ -1,0 +1,101 @@
+.popular-sales { 
+    margin-left: 64px;
+    width: 1168px;
+    display: flex; 
+    justify-content: space-between; 
+    gap: 20px; 
+    font-weight: 600; 
+  } 
+
+  @media (max-width: 991px) { 
+    .popular-sales { 
+      flex-wrap: wrap; 
+      
+    } 
+  } 
+
+  .heading { 
+    color: #1d1d1d; 
+    font: 500 30px/120% Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  } 
+
+  .view-more-container { 
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    display: flex; 
+    gap: 4px; 
+    margin: auto 0; 
+    padding: 0 3px 0 20px; 
+    font-size: 16px; 
+    color: #222; 
+    line-height: 150%; 
+    justify-content: space-between; 
+  } 
+
+  .view-more { 
+    font-family: Inter, sans-serif; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 0; 
+    margin: 0; 
+    color: black; 
+    font: inherit; 
+  } 
+
+  .arrow-icon { 
+    aspect-ratio: 1.22; 
+    object-fit: auto; 
+    object-position: center; 
+    width: 17px; 
+    margin: auto 0; 
+  } 
+
+  .cards{
+    width: 30%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; 
+  }
+
+  .popular{
+    height: 435px;
+    width: 1169px;
+    display: flex; 
+    justify-content: space-between; 
+  }
+  .canopoly{
+    display: block;
+    width: 370px;
+    max-width: 100%;
+  }
+  .header {
+    text-align: center;
+  }
+  .title {
+    color: #1d1d1d;
+    font: 500 30px/120% Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+
+  .popularbek{
+    height: 435px;
+    width: 1169px;
+    display: flex; 
+    justify-content: space-between; 
+  }
+
+  .canopolybek{
+    margin-left: 55px;
+    display: block;
+    width: 370px;
+    max-width: 100%;
+  }
+
+  .cardsbek{
+    width: 30%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; 
+  }

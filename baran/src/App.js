@@ -3,7 +3,7 @@ import React from 'react';
 import Shop from './pages/Shop'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Categories from "./pages/Categories";
-import About from "./pages/About";
+import About from "./pages/about";
 import Contacts from "./pages/Contacts";
 import Partner from "./pages/Partner";
 import Basket from "./pages/Basket";
