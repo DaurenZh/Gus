@@ -1,10 +1,12 @@
 import Navbar from "./Components/navbar/navbar";
 import React from 'react';
 import Shop from './pages/Shop'
-import About from './pages/About';
-import Categories from './pages/Categories';
-import Contacts from './pages/Contacts';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Categories from "./pages/Categories";
+import About from "./pages/About";
+import Contacts from "./pages/Contacts";
+import Partner from "./pages/Partner";
+import Basket from "./pages/Basket";
 
 
 const App = () => {
@@ -13,9 +15,11 @@ const App = () => {
       <Navbar/>
         <Routes>
           <Route path="/" element={<Shop/> } />
-          <Route path="one" element={<Categories/>} />
-          <Route path="two" element={<About/>} />
-          <Route path="three" element={<Contacts/>} />
+          <Route path="/categories" element={<Categories/>} />
+          <Route path="/about" element={<About/>}/>
+          <Route path="/contacts" element={<Contacts/>}/>
+          <Route path="/partner" element={<Partner/>}/>
+          <Route path="/basket" element={<Basket/>}/>
         </Routes>
     </BrowserRouter>
   );
