@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/contacts" element={<Contacts/>}/>
           <Route path="/partner" element={<Partner/>}/>
           <Route path="/basket" element={<Basket/>}/>
-          <Route path="/Auth" element={<Auth/>}/>
+          <Route path="/auth" element={<Auth/>}/>
         </Routes>
     </BrowserRouter>
   );
