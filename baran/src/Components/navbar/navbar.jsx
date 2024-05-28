@@ -3,7 +3,7 @@ import heart from './../../images/icons/arcticons--heart.svg'
 import cart from './../../images/icons/mdi-light--cart.svg'
 import './navbar.css'
 import { NavLink } from "react-router-dom";
-import { ABOUT_ROUTE, BASKET_ROUTE, CATEGORIES_ROUTE, CONTACTS_ROUTE, PARTNER_ROUTE, SHOP_ROUTE, NOT_ROUTE } from "../../utils/consts";
+import { ABOUT_ROUTE, BASKET_ROUTE, CATEGORIES_ROUTE, CONTACTS_ROUTE, PARTNER_ROUTE, SHOP_ROUTE, FAV_ROUTE, } from "../../utils/consts";
 
 function Navbar() {
   return (
@@ -31,12 +31,14 @@ function Navbar() {
           </button>
         </form>
         <div className="user-actions">
-          <img
-            loading="lazy"
-            src={heart}
-            className="user-icon"
-            alt="User"
-          />
+          <NavLink to={FAV_ROUTE}>
+            <img
+              loading="lazy"
+              src={heart}
+              className="user-icon"
+              alt="User"
+            />
+          </NavLink>
           <NavLink className="cart-container" to={BASKET_ROUTE}>
             <img
               loading="lazy"
@@ -46,7 +48,7 @@ function Navbar() {
             />
             <span className="cart-count">15</span>
           </NavLink>
-          <NavLink className="not-container" to={NOT_ROUTE}>
+          <NavLink className="not-container" to={LOGIN_ROUTE}>
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/3d1f8ca0f1468c80a20cda12236fe44625115dd889193f5daf60d0c1b9a93136?apiKey=145a614dc8264552af1ec45aa2fef7a9&"

@@ -1,34 +1,36 @@
 const uuid = require('uuid')
 const path = require('path');
+const {ProductInfo, Product} = require('../models/models')
 const ApiError = require('../error/ApiError');
-const {Product, ProductInfo} = require('../models/models');
 
 class ProductController {
-    async create(req, res, next){
-        try{
+    async create(req, res, next) {
+        try {
             let {name, price, brandId, typeId, info} = req.body
             const {img} = req.files
             let fileName = uuid.v4() + ".jpg"
             img.mv(path.resolve(__dirname, '..', 'static', fileName))
-            const product = await Product.create({name, price, brandId, typeId, img: fileName})
-            if(info){
+            const product = await Product.create({name, price, brandId, typeId, img:fileName});
+
+            if (info) {
                 info = JSON.parse(info)
-                info.forEach(i => 
+                info.forEach(i =>
                     ProductInfo.create({
                         title: i.title,
                         description: i.description,
-                        productId: product.id   
+                        productId: product.id
                     })
                 )
             }
+
             return res.json(product)
- 
         } catch (e) {
             next(ApiError.badRequest(e.message))
         }
+
     }
 
-    async getAll(req, res){
+    async getAll(req, res) {
         let {brandId, typeId, limit, page} = req.query
         page = page || 1
         limit = limit || 9
@@ -37,16 +39,16 @@ class ProductController {
         if (!brandId && !typeId) {
             products = await Product.findAndCountAll({limit, offset})
         }
-        if (brandId && !typeId){
-            products = await Product.findAndCountAll({where:{brandId}}, limit, offset)
+        if (brandId && !typeId) {
+            products = await Product.findAndCountAll({where:{brandId}, limit, offset})
         }
         if (!brandId && typeId) {
-            products = await Product.findAndCountAll({where:{typeId}}, limit, offset)
+            products = await Product.findAndCountAll({where:{typeId}, limit, offset})
         }
         if (brandId && typeId) {
-            products = await Product.findAndCountAll({where:{brandId, typeId}}, limit, offset)
+            products = await Product.findAndCountAll({where:{typeId, brandId}, limit, offset})
         }
-        return res.json(products);
+        return res.json(products)
     }
 
     async getOne(req, res) {
@@ -60,6 +62,28 @@ class ProductController {
         return res.json(product)
     }
 
+    async delete(req, res, next) {
+        try {
+            const { id } = req.params;
+            const product = await Product.findOne({ where: { id } });
+
+            if (!product) {
+                return next(ApiError.badRequest('Product not found'));
+            }
+
+            const imgPath = path.resolve(__dirname, '..', 'static', product.img);
+            if (fs.existsSync(imgPath)) {
+                fs.unlinkSync(imgPath); 
+            }
+
+            await ProductInfo.destroy({ where: { productId: id } }); 
+            await Product.destroy({ where: { id } }); 
+
+            return res.json({ message: 'Product deleted successfully' });
+        } catch (e) {
+            next(ApiError.badRequest(e.message));
+        }
+    }
 }
 
 module.exports = new ProductController()
