@@ -6,9 +6,9 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import {authRoutes,publicRoutes} from "../routes";
-import {SHOP_ROUTE} from "../utils/consts";
-import { Context } from '../index';
+import {authRoutes,publicRoutes} from "../../routes";
+import {SHOP_ROUTE} from "../../utils/consts";
+import { Context } from '../../index';
 
 
 const AppRouter = () => {
