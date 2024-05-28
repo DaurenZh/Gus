@@ -1,5 +1,5 @@
 import Admin from "./pages/Admin"
-import { ADMIN_ROUTE, BASKET_ROUTE, PRODUCT_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE, ABOUT_ROUTE, CONTACTS_ROUTE, CATEGORIES_ROUTE, PARTNER_ROUTE, FAV_ROUTE} from "./utils/consts"
+import { ADMIN_ROUTE, BASKET_ROUTE, PRODUCT_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE, ABOUT_ROUTE, CONTACTS_ROUTE, CATEGORIES_ROUTE, PARTNER_ROUTE} from "./utils/consts"
 import Basket from "./pages/Basket"
 import Shop from "./pages/Shop"
 import Auth from "./pages/Auth"
@@ -21,10 +21,7 @@ export const authRoutes = [
         path: BASKET_ROUTE,
         Component: <Basket/>
     },
-    {
-        path: FAV_ROUTE,
-        Component: <Favorites/>
-    }
+
 ]
 
 export const publicRoutes = [
